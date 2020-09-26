@@ -1,0 +1,17 @@
+[package]
+name = "pillars"
+version = "0.1.0"
+authors = ["John Ward <john@johnward.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+env_logger = "0.7"
+gio = "0.9"
+glib = "0.10"
+gstreamer = { version = "0.16", features = ["v1_10"] }
+gtk = { version = "0.9", features = ["v3_20"] }
+log = { version = "0.4", features = ["max_level_debug", "release_max_level_warn"] }
+gettext-rs = { version = "0.4", features = ["gettext-system"] }
+clap = "2"
