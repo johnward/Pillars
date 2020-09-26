@@ -13,10 +13,10 @@ fn main() {
     // Character encoding is broken unless gtk (glib) is initialized
     let is_gtk_ok = gtk::init().is_ok();
 
-    let _use_gl = get_command_line();
+    //let _use_gl = get_command_line();
 
     if is_gtk_ok {
-        // ui::run(get_command_line());
+        ui::run();
     } else {
         error!("{}", gettext("Failed to initialize GTK"));
     }
