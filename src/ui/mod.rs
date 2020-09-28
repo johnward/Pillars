@@ -1,6 +1,19 @@
 pub mod main_window;
-use main_window::MainWindow;
+pub use self::main_window::MainWindow;
+
+use gio::prelude::*;
+//use gtk::prelude::*;
 
 pub fn run() {
-    MainWindow::create_application_ui(true);
+    let application = gtk::Application::new(
+        Some("com.github.gtk-rs.examples.builder_basics"),
+        Default::default(),
+    )
+    .expect("Initialization failed...");
+
+    application.connect_activate(|app| {
+        MainWindow::build_ui(app, true);
+    });
+
+    application.run(&[]);
 }

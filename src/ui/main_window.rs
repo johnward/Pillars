@@ -1,32 +1,25 @@
-extern crate gio;
-extern crate glib;
-extern crate gtk;
+//extern crate gio;
+//extern crate glib;
+//extern crate gtk;
 
-use gio::prelude::*;
-use glib::clone;
+//use gio::prelude::*;
+//use glib::clone;
 use gtk::prelude::*;
 
 use gtk::{ApplicationWindow, Builder, Button, MessageDialog};
 
-pub struct MainWindow {
-    has_gl: bool,
-}
+pub struct MainWindow {}
 
 impl MainWindow {
-    pub fn create_application_ui(&self, has_gl: bool) {
-        let application = gtk::Application::new(Some("Pillars"), Default::default())
-            .expect("Unable to load Application");
-
-        application.connect_activate(|app| {
-            self.build_ui(app);
-        });
-    }
-
-    fn build_ui(&self, application: &gtk::Application) {
+    pub fn build_ui(application: &gtk::Application, has_gl: bool) {
         let glade_src = include_str!("main_window.glade");
         let builder = Builder::from_string(glade_src);
-        let window = builder
-            .get_object("Pillars")
-            .expect("Could not get Pillars Main Window");
+
+        let window: ApplicationWindow =
+            builder.get_object("window1").expect("Couldn't get window1");
+        window.set_application(Some(application));
+        //let bigbutton: Button = builder.get_object("button1").expect("Couldn't get button1");
+        //bigbutton.connect_clicked(clone!(@weak dialog => move |_| dialog.show_all()));
+        window.show_all();
     }
 }
