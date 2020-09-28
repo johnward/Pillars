@@ -25,13 +25,13 @@ impl MainWindow {
             .get_object("gamebackground")
             .expect("Couldn't get Background Image");
 
-        background_image.set_from_file("ui/gamebackground.png");
+        //background_image.set_from_file("images/gamebackground.png");
 
         let next_object_image: Image = builder
             .get_object("gamenextobject")
             .expect("gamenextobject not found");
 
-        next_object_image.set_from_file("gamenextobject.png");
+        //next_object_image.set_from_file("images/gamenextobject.png");
 
         window.show_all();
     }

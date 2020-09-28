@@ -15,16 +15,18 @@
         <property name="can_focus">False</property>
         <property name="hexpand">True</property>
         <property name="vexpand">True</property>
+        <property name="row_spacing">5</property>
         <child>
           <object class="GtkGrid">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="row_spacing">2</property>
+            <property name="row_spacing">5</property>
+            <property name="column_spacing">5</property>
             <child>
               <object class="GtkImage" id="gamebackground">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="pixbuf">gamebackground.png</property>
+                <property name="pixbuf">images/gamebackground.png</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -39,7 +41,7 @@
                   <object class="GtkImage" id="gamenextobject">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="pixbuf">gamenextobject.png</property>
+                    <property name="pixbuf">images/gamenextobject.png</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
